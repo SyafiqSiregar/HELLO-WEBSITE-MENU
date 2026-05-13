@@ -166,4 +166,15 @@ function closeDetail() {
 // Inisialisasi awal saat web dimuat
 window.addEventListener('DOMContentLoaded', () => {
      renderProducts('semua');
+     
+     // Sembunyikan notifikasi bawah setelah 5 detik
+     setTimeout(() => {
+         const notification = document.getElementById('bottom-notification');
+         if (notification) {
+             notification.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+             setTimeout(() => {
+                 notification.classList.add('hidden');
+             }, 500); // Tunggu animasi selesai
+         }
+     }, 5000);
 });
