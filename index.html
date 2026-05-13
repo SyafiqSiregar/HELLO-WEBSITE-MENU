@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Hello Coffee - Premium Menu</title>
-    
+
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Load Google Fonts: Inter (Sans) & Playfair Display (Serif) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
 
     <!-- Tailwind Configuration -->
     <script>
@@ -42,55 +45,67 @@
     </script>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=1.1">
 </head>
+
 <body class="text-app-textMain antialiased selection:bg-app-accent selection:text-app-bg pb-24">
 
     <div id="app-container">
-        
+
         <!-- Header with Cafe Background -->
-        <header class="relative pt-12 pb-6 px-5 border-b border-white/5">
+        <header class="relative pt-12 pb-6 px-6 border-b border-white/5">
             <!-- Background Image & Gradient Overlays -->
             <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&h=600&fit=crop" alt="Cafe Interior" class="w-full h-full object-cover opacity-30">
+                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&h=600&fit=crop"
+                    alt="Cafe Interior" class="w-full h-full object-cover opacity-30">
                 <div class="absolute inset-0 bg-gradient-to-b from-app-bg/20 via-app-bg/80 to-app-bg"></div>
             </div>
-            
+
             <!-- Header Content -->
             <div class="relative z-10 flex justify-between items-end mt-4">
                 <div>
-                    <h1 class="font-serif text-4xl font-bold tracking-wide text-white">
-                        Hello <span class="italic text-app-accent">Coffee</span>
+                    <h1 class="font-serif text-4xl font-bold tracking-wide text-white flex items-center gap-2">
+                        <img src="assets/Hello.png" alt="Hello" class="h-[40px] w-auto object-contain">
+                        <span class="italic text-app-accent">Coffee</span>
                     </h1>
-                    <p class="text-app-textMuted text-sm mt-2 flex items-center gap-1.5 font-light">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                        Mulyo Asri, TBB
+                    <p class="text-app-textMuted text-sm mt-4 flex items-center gap-1.5 font-light">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        Mulya Asri, Lampung.
                     </p>
                 </div>
-                <!-- Profile/Logo Image -->
-                <div class="w-14 h-14 rounded-full overflow-hidden border border-white/10 shadow-lg shrink-0">
-                    <img src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?w=200&h=200&fit=crop" alt="Coffee Beans Logo" class="w-full h-full object-cover">
-                </div>
+                <!-- Profile/Logo Image removed to avoid duplication -->
             </div>
         </header>
 
         <!-- Main Navigation Tabs -->
         <nav class="flex px-5 pt-2 mb-4 relative z-10 border-b border-app-border/50">
-            <button id="tab-btn-menu" onclick="switchTab('menu')" class="mr-6 pb-3 text-app-accent border-b-2 border-app-accent font-medium transition-colors text-[15px]">Menu Utama</button>
-            <button id="tab-btn-info" onclick="switchTab('info')" class="mr-6 pb-3 text-app-textMuted border-b-2 border-transparent font-medium transition-colors text-[15px]">Info Cafe</button>
+            <button id="tab-btn-menu" onclick="switchTab('menu')"
+                class="mr-6 pb-3 text-app-accent border-b-2 border-app-accent font-medium transition-colors text-[15px]">Menu
+                Utama</button>
+            <button id="tab-btn-info" onclick="switchTab('info')"
+                class="mr-6 pb-3 text-app-textMuted border-b-2 border-transparent font-medium transition-colors text-[15px]">Info
+                Cafe</button>
         </nav>
 
         <main class="relative z-10 min-h-[60vh]">
-            
+
             <!-- TAB: MENU -->
             <div id="tab-content-menu" class="px-5 pb-6 block animate-fadeIn">
-                
+
                 <!-- Category Pills (Horizontal Scroll) -->
                 <div class="flex overflow-x-auto no-scrollbar gap-3 mb-8 pb-1">
-                    <button id="btn-cat-semua" onclick="filterCategory('semua')" class="whitespace-nowrap px-5 py-2 rounded-full bg-app-accent text-app-bg font-semibold text-sm transition-transform active:scale-95">Semua</button>
-                    <button id="btn-cat-coffee" onclick="filterCategory('coffee')" class="whitespace-nowrap px-5 py-2 rounded-full bg-transparent text-app-textMain border border-app-border font-medium text-sm transition-transform active:scale-95">Coffee</button>
-                    <button id="btn-cat-non-coffee" onclick="filterCategory('non-coffee')" class="whitespace-nowrap px-5 py-2 rounded-full bg-transparent text-app-textMain border border-app-border font-medium text-sm transition-transform active:scale-95">Non-Coffee</button>
-                    <button id="btn-cat-makanan" onclick="filterCategory('makanan')" class="whitespace-nowrap px-5 py-2 rounded-full bg-transparent text-app-textMain border border-app-border font-medium text-sm transition-transform active:scale-95">Makanan</button>
+                    <button id="btn-cat-semua" onclick="filterCategory('semua')"
+                        class="whitespace-nowrap px-5 py-2 rounded-full bg-app-accent text-app-bg font-semibold text-sm transition-transform active:scale-95">Semua</button>
+                    <button id="btn-cat-coffee" onclick="filterCategory('coffee')"
+                        class="whitespace-nowrap px-5 py-2 rounded-full bg-transparent text-app-textMain border border-app-border font-medium text-sm transition-transform active:scale-95">Coffee</button>
+                    <button id="btn-cat-non-coffee" onclick="filterCategory('non-coffee')"
+                        class="whitespace-nowrap px-5 py-2 rounded-full bg-transparent text-app-textMain border border-app-border font-medium text-sm transition-transform active:scale-95">Non-Coffee</button>
+                    <button id="btn-cat-makanan" onclick="filterCategory('makanan')"
+                        class="whitespace-nowrap px-5 py-2 rounded-full bg-transparent text-app-textMain border border-app-border font-medium text-sm transition-transform active:scale-95">Makanan</button>
                 </div>
 
                 <!-- Section Title -->
@@ -109,27 +124,34 @@
                 <div class="space-y-4 max-w-2xl mx-auto">
                     <!-- Map Card -->
                     <div class="bg-app-card rounded-2xl p-4 border border-white/5">
-                        <div class="w-full h-32 bg-[#1A1613] rounded-xl mb-4 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&h=400&fit=crop" alt="Map" class="w-full h-full object-cover opacity-50 grayscale">
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-app-accent drop-shadow-md"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                            </div>
+                        <div class="w-full h-40 bg-[#1A1613] rounded-xl mb-4 overflow-hidden relative">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4018.2064586590122!2d105.16171347502626!3d-4.633004695341746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3f49c1ed8f7299%3A0xae378e2b0dd17aeb!2sHello%20coffee!5e1!3m2!1sid!2sid!4v1778664364555!5m2!1sid!2sid" 
+                                class="w-full h-full border-0 grayscale opacity-75 hover:grayscale-0 transition-all duration-300" 
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                         <h3 class="font-semibold text-white mb-1">JL Merdeka, Mulyo Asri</h3>
                         <p class="text-sm text-app-textMuted mb-3">Tulang Bawang Barat, Lampung</p>
-                        <button class="w-full border border-app-border text-app-accent py-2 rounded-xl text-sm font-medium hover:bg-white/5 transition-colors">Buka Google Maps</button>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Hello+coffee+Mulyo+Asri" target="_blank"
+                            class="w-full inline-block text-center border border-app-border text-app-accent py-2 rounded-xl text-sm font-medium hover:bg-white/5 transition-colors">Buka
+                            Google Maps</a>
                     </div>
 
                     <!-- Operational Hours -->
                     <div class="bg-app-card rounded-2xl p-4 border border-white/5 flex items-start gap-4">
                         <div class="mt-1 text-app-textMuted shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
                         </div>
                         <div>
                             <h3 class="font-semibold text-white text-sm mb-1">Jam Operasional</h3>
                             <p class="text-sm text-app-textMuted">Senin - Minggu</p>
                             <p class="text-sm text-app-textMuted mb-2">16.00 - 23.00 WIB</p>
-                            <span class="inline-block bg-green-500/10 text-green-400 text-xs px-2 py-1 rounded">Buka Sekarang</span>
+                            <span class="inline-block bg-green-500/10 text-green-400 text-xs px-2 py-1 rounded">Buka
+                                Sekarang</span>
                         </div>
                     </div>
 
@@ -137,20 +159,35 @@
                     <div class="bg-app-card rounded-2xl p-4 border border-white/5 space-y-4">
                         <div class="flex items-center gap-4">
                             <div class="text-green-400 shrink-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
                             </div>
                             <div class="flex-1">
                                 <h3 class="font-medium text-white text-sm">WhatsApp</h3>
                                 <p class="text-xs text-app-textMuted">Reservasi & Info</p>
                             </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-app-textMuted"><path d="m9 18 6-6-6-6"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="text-app-textMuted">
+                                <path d="m9 18 6-6-6-6" />
+                            </svg>
                         </div>
-                        
+
                         <div class="h-[1px] w-full bg-app-border/50"></div>
-                        
+
                         <div class="flex items-center gap-4">
                             <div class="text-blue-400 shrink-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><circle cx="12" cy="20" r="1"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M5 13a10 10 0 0 1 14 0" />
+                                    <path d="M8.5 16.5a5 5 0 0 1 7 0" />
+                                    <circle cx="12" cy="20" r="1" />
+                                </svg>
                             </div>
                             <div class="flex-1">
                                 <h3 class="font-medium text-white text-sm">WiFi Cafe</h3>
@@ -162,13 +199,23 @@
 
                         <div class="flex items-center gap-4">
                             <div class="text-pink-400 shrink-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                                </svg>
                             </div>
                             <div class="flex-1">
                                 <h3 class="font-medium text-white text-sm">Instagram</h3>
                                 <p class="text-xs text-app-textMuted">@hellocoffee.tbb</p>
                             </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-app-textMuted"><path d="m9 18 6-6-6-6"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="text-app-textMuted">
+                                <path d="m9 18 6-6-6-6" />
+                            </svg>
                         </div>
                     </div>
                 </div>
@@ -176,57 +223,66 @@
         </main>
 
         <!-- Sticky Bottom Notification -->
-        <div class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2.5rem)] max-w-[400px] bg-[#1A1613]/95 backdrop-blur-md border border-white/5 py-3.5 px-4 rounded-2xl z-40 shadow-soft">
-            <p class="text-center text-[13px] text-app-textMuted">Ini adalah menu digital. Panggil staf untuk memesan.</p>
+        <div
+            class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2.5rem)] max-w-[400px] bg-[#1A1613]/95 backdrop-blur-md border border-white/5 py-3.5 px-4 rounded-2xl z-40 shadow-soft">
+            <p class="text-center text-[13px] text-app-textMuted">Ini adalah menu digital. Panggil staf untuk memesan.
+            </p>
         </div>
 
         <!-- Product Detail Bottom Sheet (Modal) -->
         <div id="modal-container" class="fixed inset-0 z-50 flex items-end hidden">
             <!-- Backdrop -->
-            <div id="modal-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity opacity-0" onclick="closeDetail()"></div>
-            
+            <div id="modal-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity opacity-0"
+                onclick="closeDetail()"></div>
+
             <!-- Modal Content (Sheet) -->
-            <div id="modal-sheet" class="relative w-full max-w-[440px] mx-auto bg-app-card rounded-t-3xl border-t border-white/10 flex flex-col max-h-[85vh] transform translate-y-full transition-transform duration-400 ease-out shadow-soft">
-                
+            <div id="modal-sheet"
+                class="relative w-full max-w-[440px] mx-auto bg-app-card rounded-t-3xl border-t border-white/10 flex flex-col max-h-[85vh] transform translate-y-full transition-transform duration-400 ease-out shadow-soft">
+
                 <!-- Close handle -->
                 <div class="w-full flex justify-center p-4 cursor-pointer" onclick="closeDetail()">
                     <div class="w-12 h-1.5 bg-app-border rounded-full"></div>
                 </div>
-                
+
                 <!-- Scrollable Content -->
                 <div class="overflow-y-auto pb-8 px-5 no-scrollbar">
-                    <div id="modal-img-container" class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-5 border border-white/5">
+                    <div id="modal-img-container"
+                        class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-5 border border-white/5">
                         <img id="modal-img" src="" alt="Product Image" class="w-full h-full object-cover">
                     </div>
-                    
-                    <h2 id="modal-title" class="font-serif text-3xl font-semibold text-white leading-tight mb-2">Product Title</h2>
+
+                    <h2 id="modal-title" class="font-serif text-3xl font-semibold text-white leading-tight mb-2">Product
+                        Title</h2>
                     <p id="modal-price" class="text-app-accent font-medium text-lg mb-4">Rp 0</p>
-                    
+
                     <p id="modal-desc" class="text-app-textMuted text-sm leading-relaxed mb-6 font-light">
                         Product description goes here.
                     </p>
-                    
+
                     <!-- Variants -->
                     <div id="modal-variants" class="mb-8 p-4 rounded-xl bg-app-bg border border-app-border/50">
                         <p class="text-sm font-medium text-white mb-3">Pilihan Varian:</p>
                         <div class="flex gap-4">
                             <label class="flex items-center gap-2 cursor-pointer group">
-                                <div class="w-5 h-5 rounded-full border-2 border-app-accent flex items-center justify-center">
+                                <div
+                                    class="w-5 h-5 rounded-full border-2 border-app-accent flex items-center justify-center">
                                     <div class="w-2.5 h-2.5 rounded-full bg-app-accent"></div>
                                 </div>
                                 <span class="text-sm text-app-textMain">Hot</span>
                             </label>
                             <label class="flex items-center gap-2 cursor-pointer group">
-                                <div class="w-5 h-5 rounded-full border-2 border-app-border flex items-center justify-center">
+                                <div
+                                    class="w-5 h-5 rounded-full border-2 border-app-border flex items-center justify-center">
                                     <div class="w-2.5 h-2.5 rounded-full bg-transparent"></div>
                                 </div>
                                 <span class="text-sm text-app-textMuted">Iced</span>
                             </label>
                         </div>
                     </div>
-                    
+
                     <!-- Back Button -->
-                    <button onclick="closeDetail()" class="w-full bg-app-bg border border-app-border text-white py-3.5 rounded-xl font-medium active:scale-95 transition-transform">
+                    <button onclick="closeDetail()"
+                        class="w-full bg-app-bg border border-app-border text-white py-3.5 rounded-xl font-medium active:scale-95 transition-transform">
                         Kembali ke Menu
                     </button>
                 </div>
@@ -239,4 +295,5 @@
     <script src="js/data.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>
