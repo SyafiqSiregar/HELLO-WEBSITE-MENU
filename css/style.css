@@ -1,0 +1,36 @@
+/* Hide scrollbar for category pills */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Custom Animations */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.animate-fadeIn { animation: fadeIn 0.4s ease-out forwards; }
+
+/* Mobile Constraint for Desktop viewing */
+body { background-color: #14110F; display: flex; justify-content: center; }
+#app-container {
+    width: 100%;
+    max-width: 440px; /* Mobile width constraint */
+    min-height: 100vh;
+    background-color: #14110F; /* app-bg */
+    position: relative;
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+    overflow-x: hidden;
+    transition: max-width 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (min-width: 640px) {
+    #app-container {
+        max-width: 640px;
+    }
+}
+
+@media (min-width: 768px) {
+    #app-container {
+        max-width: 768px;
+    }
+}
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
