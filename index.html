@@ -100,12 +100,20 @@
                 <div class="flex overflow-x-auto no-scrollbar gap-3 mb-8 pb-1">
                     <button id="btn-cat-semua" onclick="filterCategory('semua')"
                         class="whitespace-nowrap px-5 py-2 rounded-full bg-app-accent text-app-bg font-semibold text-sm transition-transform active:scale-95">Semua</button>
+                    <button id="btn-cat-signature" onclick="filterCategory('signature')"
+                        class="whitespace-nowrap px-5 py-2 rounded-full bg-transparent text-app-textMain border border-app-border font-medium text-sm transition-transform active:scale-95">Signature</button>
+                    <button id="btn-cat-latte" onclick="filterCategory('latte')"
+                        class="whitespace-nowrap px-5 py-2 rounded-full bg-transparent text-app-textMain border border-app-border font-medium text-sm transition-transform active:scale-95">Latte</button>
                     <button id="btn-cat-coffee" onclick="filterCategory('coffee')"
                         class="whitespace-nowrap px-5 py-2 rounded-full bg-transparent text-app-textMain border border-app-border font-medium text-sm transition-transform active:scale-95">Coffee</button>
                     <button id="btn-cat-non-coffee" onclick="filterCategory('non-coffee')"
-                        class="whitespace-nowrap px-5 py-2 rounded-full bg-transparent text-app-textMain border border-app-border font-medium text-sm transition-transform active:scale-95">Non-Coffee</button>
-                    <button id="btn-cat-makanan" onclick="filterCategory('makanan')"
-                        class="whitespace-nowrap px-5 py-2 rounded-full bg-transparent text-app-textMain border border-app-border font-medium text-sm transition-transform active:scale-95">Makanan</button>
+                        class="whitespace-nowrap px-5 py-2 rounded-full bg-transparent text-app-textMain border border-app-border font-medium text-sm transition-transform active:scale-95">Non Coffee</button>
+                    <button id="btn-cat-tea" onclick="filterCategory('tea')"
+                        class="whitespace-nowrap px-5 py-2 rounded-full bg-transparent text-app-textMain border border-app-border font-medium text-sm transition-transform active:scale-95">Tea</button>
+                    <button id="btn-cat-snack-dessert" onclick="filterCategory('snack-dessert')"
+                        class="whitespace-nowrap px-5 py-2 rounded-full bg-transparent text-app-textMain border border-app-border font-medium text-sm transition-transform active:scale-95">Snack & Dessert</button>
+                    <button id="btn-cat-main-course" onclick="filterCategory('main-course')"
+                        class="whitespace-nowrap px-5 py-2 rounded-full bg-transparent text-app-textMain border border-app-border font-medium text-sm transition-transform active:scale-95">Main Course</button>
                 </div>
 
                 <!-- Section Title -->
@@ -114,7 +122,7 @@
                 </h2>
 
                 <!-- Menu Grid -->
-                <div id="menu-grid-container" class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                <div id="menu-grid-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
                     <!-- Products rendered via JS -->
                 </div>
             </div>

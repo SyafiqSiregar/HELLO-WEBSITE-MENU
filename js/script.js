@@ -1,9 +1,13 @@
 const menuGrid = document.getElementById('menu-grid-container');
 const categoryButtons = {
     'semua': document.getElementById('btn-cat-semua'),
+    'signature': document.getElementById('btn-cat-signature'),
+    'latte': document.getElementById('btn-cat-latte'),
     'coffee': document.getElementById('btn-cat-coffee'),
     'non-coffee': document.getElementById('btn-cat-non-coffee'),
-    'makanan': document.getElementById('btn-cat-makanan')
+    'tea': document.getElementById('btn-cat-tea'),
+    'snack-dessert': document.getElementById('btn-cat-snack-dessert'),
+    'main-course': document.getElementById('btn-cat-main-course')
 };
 const sectionTitle = document.getElementById('menu-section-title');
 
@@ -83,10 +87,14 @@ function filterCategory(category) {
     }
     
     // Update Title 
-    if(category === 'semua') sectionTitle.innerHTML = '<span class="text-app-accent text-xl">✦</span> Signature Picks';
+    if(category === 'semua') sectionTitle.innerHTML = '<span class="text-app-accent text-xl">✦</span> Semua Menu';
+    else if(category === 'signature') sectionTitle.innerHTML = '<span class="text-app-accent text-xl">✦</span> Signature Picks';
+    else if(category === 'latte') sectionTitle.innerHTML = '<span class="text-app-accent text-xl">✦</span> Pilihan Latte';
     else if(category === 'coffee') sectionTitle.innerHTML = '<span class="text-app-accent text-xl">✦</span> Kopi Pilihan';
     else if(category === 'non-coffee') sectionTitle.innerHTML = '<span class="text-app-accent text-xl">✦</span> Sweet & Fresh';
-    else if(category === 'makanan') sectionTitle.innerHTML = '<span class="text-app-accent text-xl">✦</span> Makanan & Snack';
+    else if(category === 'tea') sectionTitle.innerHTML = '<span class="text-app-accent text-xl">✦</span> Relaxing Tea';
+    else if(category === 'snack-dessert') sectionTitle.innerHTML = '<span class="text-app-accent text-xl">✦</span> Snack & Dessert';
+    else if(category === 'main-course') sectionTitle.innerHTML = '<span class="text-app-accent text-xl">✦</span> Main Course';
 }
 
 // Fungsi Pindah Tab Navigasi
