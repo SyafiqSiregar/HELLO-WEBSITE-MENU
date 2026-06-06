@@ -6,8 +6,7 @@ const categoryButtons = {
     'coffee': document.getElementById('btn-cat-coffee'),
     'non-coffee': document.getElementById('btn-cat-non-coffee'),
     'tea': document.getElementById('btn-cat-tea'),
-    'snack-dessert': document.getElementById('btn-cat-snack-dessert'),
-    'main-course': document.getElementById('btn-cat-main-course')
+    'snack-dessert': document.getElementById('btn-cat-snack-dessert')
 };
 const sectionTitle = document.getElementById('menu-section-title');
 
@@ -94,7 +93,6 @@ function filterCategory(category) {
     else if(category === 'non-coffee') sectionTitle.innerHTML = '<span class="text-app-accent text-xl">✦</span> Sweet & Fresh';
     else if(category === 'tea') sectionTitle.innerHTML = '<span class="text-app-accent text-xl">✦</span> Relaxing Tea';
     else if(category === 'snack-dessert') sectionTitle.innerHTML = '<span class="text-app-accent text-xl">✦</span> Snack & Dessert';
-    else if(category === 'main-course') sectionTitle.innerHTML = '<span class="text-app-accent text-xl">✦</span> Main Course';
 }
 
 // Fungsi Pindah Tab Navigasi
